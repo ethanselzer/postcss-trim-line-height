@@ -1,0 +1,11 @@
+a {
+    trim-line-height: to-baseline;
+    font-size: 20px;
+    line-height: 2em;
+}
+
+.b {
+    trim-line-height: to-ascender to-baseline;
+    font: bold 16px / calc(24 / 16) Georgia;
+    margin: 20px;
+}

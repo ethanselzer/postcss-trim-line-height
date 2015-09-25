@@ -1,0 +1,22 @@
+{
+  "name": "postcss-trim-line-height",
+  "version": "0.1.0",
+  "description": "Reconciles vertical whitespace introduced by line height.",
+  "scripts": {
+    "test": "gulp test"
+  },
+  "author": "Ethan Selzer <ethanselzer@gmail.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "del": "^2.0.2",
+    "gulp": "^3.9.0",
+    "gulp-eslint": "^1.0.0",
+    "gulp-jasmine": "^2.1.0",
+    "gulp-postcss": "^5.1.10",
+    "jasmine": "^2.3.2"
+  },
+  "dependencies": {
+    "postcss": "^4.1.16",
+    "lodash": "^3.10.1"
+  }
+}
