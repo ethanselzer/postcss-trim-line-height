@@ -12,11 +12,11 @@
     "gulp": "^3.9.0",
     "gulp-eslint": "^1.0.0",
     "gulp-jasmine": "^2.1.0",
-    "gulp-postcss": "^5.1.10",
+    "gulp-postcss": "^6.0.0",
     "jasmine": "^2.3.2"
   },
   "dependencies": {
-    "postcss": "^4.1.16",
-    "lodash": "^3.10.1"
+    "lodash": "^3.10.1",
+    "postcss": "^5.0.8"
   }
 }

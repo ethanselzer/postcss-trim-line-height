@@ -13,8 +13,8 @@ var getShorthandWithAdjustedTopAndBottom = transforms.getShorthandWithAdjustedTo
 
 module.exports = postcss.plugin('trim-line-height', function(opts) {
     return function(root) {
-        root.eachRule(function(rule) {
-            rule.eachDecl('trim-line-height', function(adjustmentDeclaration) {
+        root.walkRules(function(rule) {
+            rule.walkDecls('trim-line-height', function(adjustmentDeclaration) {
                 var targetLonghandProp;
                 var targetShorthandProp = 'margin';
                 var options = config.getOptions(opts);
@@ -122,7 +122,7 @@ module.exports = postcss.plugin('trim-line-height', function(opts) {
                     }
                 }
 
-                adjustmentDeclaration.removeSelf();
+                adjustmentDeclaration.remove();
             });
         });
     };
