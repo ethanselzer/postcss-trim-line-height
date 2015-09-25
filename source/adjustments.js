@@ -15,14 +15,14 @@ function getBottomAdjustment(adjustments, bottomAdjustments) {
 }
 
 function getLineboxAdjustment(fontFamily, fontWeight, adjustment, options) {
-    var _default = options.defaultAdjustments;
+    var defaultLineboxAdjustments = options.defaultAdjustments;
     var customFamily = options.adjustmentsByTypeface[fontFamily];
-    var customWeight = customFamily && customFamily[fontWeight];
+    var customLineboxAdjustments = customFamily && customFamily[fontWeight];
     adjustment = _.camelCase(adjustment);
-    if (customWeight) {
-        return _.assign({}, _default, customWeight)[adjustment];
+    if (customLineboxAdjustments) {
+        return _.assign({}, defaultLineboxAdjustments, customLineboxAdjustments)[adjustment];
     }
-    return _default[adjustment];
+    return defaultLineboxAdjustments[adjustment];
 }
 
 module.exports = {
