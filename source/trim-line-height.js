@@ -29,7 +29,8 @@ module.exports = postcss.plugin('trim-line-height', function(opts) {
                             value: getShorthandWithAdjustedTopAndBottom(
                                 _.assign({}, input, { values: postcss.list.space(input.margin.value) }),
                                 options
-                            )
+                            ),
+                            important: input.margin.important
                         })
                     );
                 } else {
@@ -57,7 +58,8 @@ module.exports = postcss.plugin('trim-line-height', function(opts) {
                                             adjustment: input.topAdjustment
                                         }),
                                         options
-                                    )
+                                    ),
+                                    important: input.marginTop.important
                                 })
                             );
                         }
@@ -69,7 +71,8 @@ module.exports = postcss.plugin('trim-line-height', function(opts) {
                                     value: getShorthandWithAdjustedTop(
                                         _.assign({}, input, { values: postcss.list.space(input.margin.value) }),
                                         options
-                                    )
+                                    ),
+                                    important: input.margin.important
                                 })
                             );
                         }
@@ -98,7 +101,8 @@ module.exports = postcss.plugin('trim-line-height', function(opts) {
                                             adjustment: input.bottomAdjustment
                                         }),
                                         options
-                                    )
+                                    ),
+                                    important: input.marginBottom.important
                                 })
                             );
                         }
@@ -110,7 +114,8 @@ module.exports = postcss.plugin('trim-line-height', function(opts) {
                                     value: getShorthandWithAdjustedBottom(
                                         _.assign({}, input, { values: postcss.list.space(input.margin.value) }),
                                         options
-                                    )
+                                    ),
+                                    important: input.margin.important
                                 })
                             );
                         }

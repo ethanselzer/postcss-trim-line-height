@@ -15,7 +15,7 @@ a{
 }
 ```
 # Next Steps
-1. [bug] Important keyword (!important) is not honored when transforming target margin value(s)
+1. ~~[bug] Important keyword (!important) is not honored when transforming target margin value(s)~~
 1. Upgrade to PostCSS 5x
 1. Implement custom typeface adjustment options for NR/HL typefaces
 1. Research and document plugin order dependency

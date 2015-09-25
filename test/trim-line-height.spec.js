@@ -155,6 +155,12 @@ describe('PostCSS Trim Line Height', function() {
             test(inputs, output);
         });
 
+        it('adjusts existing top margin if specified in longhand with the !important keyword applied', function() {
+            var input = 'a{font: 20px/30px Georgia; margin-top: 20px !important; trim-line-height: to-capital;}';
+            var output = 'a{font: 20px/30px Georgia; margin-top: calc(20px + ((30px - 20px) / -2) + -0.1em) !important;}';
+            test(input, output);
+        });
+
         it('adjusts existing top margin if specified in shorthand with one value', function() {
             var input = 'a{font: 20px/30px Georgia; margin: 20px; trim-line-height: to-capital;}';
             var output = 'a{font: 20px/30px Georgia; margin: calc(20px + ((30px - 20px) / -2) + -0.1em) 20px 20px;}';
@@ -182,6 +188,12 @@ describe('PostCSS Trim Line Height', function() {
         it('adjusts existing top margin if specified in shorthand with four values, where all are expressed as calc', function() {
             var input = 'a{font: 20px/30px Georgia; margin: calc(20px + 5px) calc(10px -2px) calc(5px + 10%) calc(30px / 2); trim-line-height: to-capital;}';
             var output = 'a{font: 20px/30px Georgia; margin: calc((20px + 5px) + ((30px - 20px) / -2) + -0.1em) calc(10px -2px) calc(5px + 10%) calc(30px / 2);}';
+            test(input, output);
+        });
+
+        it('adjusts existing top margin if specified in shorthand with four values, and the !important keyword applied', function() {
+            var input = 'a{font: 20px/30px Georgia; margin: 20px 10px 30px 5px !important; trim-line-height: to-capital;}';
+            var output = 'a{font: 20px/30px Georgia; margin: calc(20px + ((30px - 20px) / -2) + -0.1em) 10px 30px 5px !important;}';
             test(input, output);
         });
 
@@ -228,6 +240,12 @@ describe('PostCSS Trim Line Height', function() {
             test(inputs, output);
         });
 
+        it('adjusts existing longhand bottom margin with the !important keyword applied', function() {
+            var input = 'a{font: 100%/2 Georgia; margin-bottom: 40px !important; trim-line-height: to-descender;}';
+            var output = 'a{font: 100%/2 Georgia; margin-bottom: calc(40px + ((2em - 1em) / -2) + 0.05em) !important;}';
+            test(input, output);
+        });
+
         it('adjusts existing shorthand bottom margin when one value is specified', function() {
             var input = 'a{font: 100%/2 Georgia; margin: 40px; trim-line-height: to-descender;}';
             var output = 'a{font: 100%/2 Georgia; margin: 40px 40px calc(40px + ((2em - 1em) / -2) + 0.05em);}';
@@ -255,6 +273,12 @@ describe('PostCSS Trim Line Height', function() {
         it('adjusts existing shorthand bottom margin when four values are specified', function() {
             var input = 'a{font: 100%/2 Georgia; margin: 40px 1em 200% 3cm; trim-line-height: to-descender;}';
             var output = 'a{font: 100%/2 Georgia; margin: 40px 1em calc(200% + ((2em - 1em) / -2) + 0.05em) 3cm;}';
+            test(input, output);
+        });
+
+        it('adjusts existing shorthand bottom margin when four values are specified and the !important keword is applied', function() {
+            var input = 'a{font: 100%/2 Georgia; margin: 40px 1em 200% 3cm !important; trim-line-height: to-descender;}';
+            var output = 'a{font: 100%/2 Georgia; margin: 40px 1em calc(200% + ((2em - 1em) / -2) + 0.05em) 3cm !important;}';
             test(input, output);
         });
 
@@ -304,6 +328,12 @@ describe('PostCSS Trim Line Height', function() {
             test(input, output);
         });
 
+        it('adjusts existing longhand top and bottom margins, with the !important keyword applied', function() {
+            var input = 'a{font: 100%/2 Georgia; margin-top: 60px !important; margin-bottom: 40px !important; trim-line-height: to-capital to-baseline;}';
+            var output = 'a{font: 100%/2 Georgia; margin-top: calc(60px + ((2em - 1em) / -2) + -0.1em) !important; margin-bottom: calc(40px + ((2em - 1em) / -2) + -0.2em) !important;}';
+            test(input, output);
+        });
+
         it('ignores existing top and bottom margin if specified in longhand, and expressed as a keyword', function() {
             var t = _.template('a{font: 20px/2 Georgia; trim-line-height: to-capital to-descender; margin-top: <%= margin %>; margin-bottom: <%= margin %>;}');
             var inputs = _.map(css.margins, function(margin) {
@@ -334,6 +364,12 @@ describe('PostCSS Trim Line Height', function() {
         it('adjusts shorthand margin when four values are specified', function() {
             var input = 'a{font: 100%/2 Georgia; margin: 60px 40px 50px 30px; trim-line-height: to-capital to-descender;}';
             var output = 'a{font: 100%/2 Georgia; margin: calc(60px + ((2em - 1em) / -2) + -0.1em) 40px calc(50px + ((2em - 1em) / -2) + 0.05em) 30px;}';
+            test(input, output);
+        });
+
+        it('adjusts shorthand margin when four values are specified, and the !important keword is applied', function() {
+            var input = 'a{font: 100%/2 Georgia; margin: 60px 40px 50px 30px !important; trim-line-height: to-capital to-descender;}';
+            var output = 'a{font: 100%/2 Georgia; margin: calc(60px + ((2em - 1em) / -2) + -0.1em) 40px calc(50px + ((2em - 1em) / -2) + 0.05em) 30px !important;}';
             test(input, output);
         });
 
