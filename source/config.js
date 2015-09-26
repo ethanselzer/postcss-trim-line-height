@@ -1,5 +1,6 @@
 var _ = require('lodash');
 var defaultOptions = {
+    defaultFontWeight: '400',
     defaultAdjustments: {
         toAscender: '0.05em',
         toCapital: '-0.1em',

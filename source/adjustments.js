@@ -17,7 +17,7 @@ function getBottomAdjustment(adjustments, bottomAdjustments) {
 function getLineboxAdjustment(fontFamily, fontWeight, adjustment, options) {
     var defaultLineboxAdjustments = options.defaultAdjustments;
     var customFamily = options.adjustmentsByTypeface[fontFamily];
-    var customLineboxAdjustments = customFamily && customFamily[fontWeight];
+    var customLineboxAdjustments = customFamily && (customFamily[fontWeight] || customFamily[options.defaultFontWeight]);
     adjustment = _.camelCase(adjustment);
     if (customLineboxAdjustments) {
         return _.assign({}, defaultLineboxAdjustments, customLineboxAdjustments)[adjustment];

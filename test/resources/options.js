@@ -1,3 +1,12 @@
+'use strict';
+
+var georgiaNormal = {
+    toAscender: '0.064em',
+    toCapital: '-0.154em',
+    toBaseline: '-0.152em',
+    toDescender: '0.064em'
+};
+
 module.exports = {
     defaultAdjustments: {
         toAscender: '0.05em',
@@ -19,6 +28,10 @@ module.exports = {
                 toBaseline: '-0.146em',
                 toDescender: '0.06em'
             }
+        },
+        'Georgia': {
+            'normal': georgiaNormal,
+            '400': georgiaNormal
         }
     }
 };

@@ -1,4 +1,5 @@
 module.exports = {
+    defaultFontWeight: '400',
     defaultAdjustments: {
         toAscender: '0.05em',
         toCapital: '-0.1em',

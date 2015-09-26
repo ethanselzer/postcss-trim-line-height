@@ -18,6 +18,7 @@ a{
 1. [x] [bug] Important keyword (!important) is not honored when transforming target margin value(s)
 1. [x] Upgrade to PostCSS 5x
 1. [x] Implement custom typeface adjustment options for NR/HL typefaces
+1. [x] Support option to match custom linebox adjustments to default font weight
 1. Research and document plugin order dependency
 1. Verify source map interoperability
 1. Review specs for gaps and enhancements

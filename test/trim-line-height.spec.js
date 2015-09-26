@@ -125,6 +125,20 @@ describe('PostCSS Trim Line Height', function() {
             var output = 'a{font: 400 14px/150% "source sans pro"; margin-bottom: calc(((1.5em - 14px) / -2) + ' + customDescenderValue + ');}';
             test(input, output, options);
         });
+
+        it('matches font weight of 400 for custom linebox adjustments by default', function() {
+            var customDescenderValue = options.adjustmentsByTypeface['source sans pro']['400'].toDescender;
+            var input = 'a{font: 14px/150% "source sans pro"; trim-line-height: to-descender;}';
+            var output = 'a{font: 14px/150% "source sans pro"; margin-bottom: calc(((1.5em - 14px) / -2) + ' + customDescenderValue + ');}';
+            test(input, output, options);
+        });
+
+        it('applies optional font weight default for custom linebox adjustments', function() {
+            var customDescenderValue = options.adjustmentsByTypeface['Georgia']['normal'].toDescender;
+            var input = 'a{font: 14px/150% Georgia; trim-line-height: to-descender;}';
+            var output = 'a{font: 14px/150% Georgia; margin-bottom: calc(((1.5em - 14px) / -2) + ' + customDescenderValue + ');}';
+            test(input, output, _.assign({}, options, { defaultFontWeight: 'normal' }));
+        });
     });
 
     describe('Top Adjustments', function() {
