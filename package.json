@@ -5,6 +5,7 @@
   "scripts": {
     "test": "gulp test"
   },
+  "main": "./source/trim-line-height",
   "author": "Ethan Selzer <ethanselzer@gmail.com>",
   "license": "ISC",
   "devDependencies": {

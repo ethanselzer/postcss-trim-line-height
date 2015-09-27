@@ -2,7 +2,7 @@
 
 var _ = require('lodash');
 var postcss = require('postcss');
-var adjust = require('../../index');
+var adjust = require('../../source/trim-line-height');
 
 function _test(input, expected, options) {
     var p = postcss().use(adjust(options));
