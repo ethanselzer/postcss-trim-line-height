@@ -32,7 +32,7 @@ function validateFontSize(input) {
 
 function validateAdjustments(input) {
     if (!areAdjustmentsValid(input.adjustments, c.topAdjustments, c.bottomAdjustments)) {
-        throwError('Value must be one of <' + c.topAdjustments + '> and or one of <'+ c.bottomAdjustments + '>');
+        throwError('Value must be one of <' + c.topAdjustments.join('|') + '> and or one of <'+ c.bottomAdjustments.join('|') + '>');
     }
 }
 
@@ -42,7 +42,7 @@ function validateMargin(input) {
     }
 }
 
-function areAdjustmentsValid(adjustments, TOP_ADJUSTMENTS, BOTTOM_ADJUSTMENTS) {
+function areAdjustmentsValid(adjustments, topAdjustments, bottomAdjustments) {
     if (adjustments.length === 0) {
         return false;
     }
@@ -52,12 +52,12 @@ function areAdjustmentsValid(adjustments, TOP_ADJUSTMENTS, BOTTOM_ADJUSTMENTS) {
     var hasTopAdjustment;
     var hasBottomAdjustment;
     for (var i = 0, len = adjustments.length; i < len; i++) {
-        if (_.includes(TOP_ADJUSTMENTS.split('|'), adjustments[i])) {
+        if (_.includes(topAdjustments, adjustments[i])) {
             if (hasTopAdjustment) {
                 return false;
             }
             hasTopAdjustment = true;
-        } else if(_.includes(BOTTOM_ADJUSTMENTS.split('|'), adjustments[i])) {
+        } else if(_.includes(bottomAdjustments, adjustments[i])) {
             if (hasBottomAdjustment) {
                 return false;
             }

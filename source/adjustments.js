@@ -4,13 +4,13 @@ var _ = require('lodash');
 
 function getTopAdjustment(adjustments, topAdjustments) {
     return _.find(adjustments, function(adjustment) {
-        return _.contains(topAdjustments.split('|'), adjustment);
+        return _.contains(topAdjustments, adjustment);
     });
 }
 
 function getBottomAdjustment(adjustments, bottomAdjustments) {
     return _.find(adjustments, function(adjustment) {
-        return _.contains(bottomAdjustments.split('|'), adjustment);
+        return _.contains(bottomAdjustments, adjustment);
     });
 }
 

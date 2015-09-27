@@ -12,8 +12,8 @@ var defaultOptions = {
 
 module.exports = {
     pluginName: 'trim-line-height',
-    topAdjustments: 'to-ascender|to-capital',
-    bottomAdjustments: 'to-baseline|to-descender',
+    topAdjustments: ['to-ascender', 'to-capital'],
+    bottomAdjustments: ['to-baseline', 'to-descender'],
     getOptions: function(options) {
         return _.assign({}, defaultOptions, options);
     }
