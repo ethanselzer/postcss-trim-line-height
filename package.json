@@ -5,9 +5,13 @@
   "scripts": {
     "test": "gulp test"
   },
-  "main": "./source/trim-line-height",
+  "main": "source/trim-line-height.js",
   "author": "Ethan Selzer <ethanselzer@gmail.com>",
-  "license": "ISC",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ethanselzer/postcss-trim-line-height"
+  },
   "devDependencies": {
     "del": "^2.0.2",
     "gulp": "^3.9.0",
