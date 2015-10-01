@@ -19,7 +19,8 @@ a{
 1. [x] Upgrade to PostCSS 5x
 1. [x] Implement custom typeface adjustment options for NR/HL typefaces
 1. [x] Support option to match custom linebox adjustments to default font weight
-1. Consider supporting default weight by typeface instead of global
+1. Create linebox adjustments for Source Sans Pro Bold
+2. Consider supporting default weight by typeface instead of global
 2. Research and document plugin order dependency
 1. Verify source map interoperability
 1. Review specs for gaps and enhancements
