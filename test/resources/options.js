@@ -10,8 +10,8 @@ var georgiaNormal = {
 module.exports = {
     defaultAdjustments: {
         toAscender: '0.05em',
-        toCapital: '-0.1em',
-        toBaseline: '-0.2em',
+        toCapital: '-0.15em',
+        toBaseline: '-0.15em',
         toDescender: '0.05em'
     },
     adjustmentsByTypeface: {
